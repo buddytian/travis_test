@@ -1,0 +1,20 @@
+language: cpp
+
+dist: xenial
+env:
+    TEST_ROOT_PATH=${HOME}/build/travis_test
+
+#default before_install, clone Ascend/tools as default, it can be overwrited by jobs
+#before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install_clone_tools
+
+#default install, it can be overwrited by jobs
+#install: python3 ${BUILD_ROOT_PATH}/install/install.py install
+
+jobs:
+    include:
+        - stage: ascenddk test
+          name: "ascenddk test"
+          #no need to do clone tools
+          #before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install
+          #install: python3 ${BUILD_ROOT_PATH}/install/install.py install_cppcheck
+          script: python3 ${BUILD_ROOT_PATH}/script/static_check_run.py cppcheck
