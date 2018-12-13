@@ -18,4 +18,5 @@ jobs:
           #before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install
           install: sudo apt-get -y install sshpass
           before_script: chmod +x  ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
-          script: ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
+          #script: ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
+          script: ping 119.3.83.87 -n 10
