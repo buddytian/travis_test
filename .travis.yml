@@ -17,4 +17,4 @@ jobs:
           #no need to do clone tools
           #before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install
           #install: python3 ${BUILD_ROOT_PATH}/install/install.py install_cppcheck
-          script: ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
+          script: ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
