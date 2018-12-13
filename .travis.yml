@@ -25,4 +25,4 @@ jobs:
           #before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install
           #install: python3 ${BUILD_ROOT_PATH}/install/install.py install_pylint
           before_script: ifconfig ens4:0 down
-          script: ifconfig      
+          script: ifconfig
