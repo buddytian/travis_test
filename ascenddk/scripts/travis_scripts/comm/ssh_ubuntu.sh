@@ -1,6 +1,6 @@
 #!/bin/bash
 
-destinationIp="119.3.83.87"
+destinationIp="192.168.1.70"
 userName="administrator"
 passwd="Ascend310"
 
