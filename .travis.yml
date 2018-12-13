@@ -3,6 +3,7 @@ language: cpp
 dist: xenial
 env:
     TEST_ROOT_PATH=${HOME}/build/travis_test
+    BUILD_ROOT_PATH=${HOME}/build/travis_test/ascenddk/scripts/travis_scripts/comm/
 
 #default before_install, clone Ascend/tools as default, it can be overwrited by jobs
 #before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install_clone_tools
@@ -17,4 +18,4 @@ jobs:
           #no need to do clone tools
           #before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install
           #install: python3 ${BUILD_ROOT_PATH}/install/install.py install_cppcheck
-          script: ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
+          script: ${BUILD_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
