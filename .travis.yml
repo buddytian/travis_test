@@ -19,4 +19,4 @@ jobs:
           install: sudo apt-get -y install sshpass
           before_script: chmod +x  ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
           #script: ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
-          script: ping 119.3.83.87 -n 10
+          script: ifconfig
