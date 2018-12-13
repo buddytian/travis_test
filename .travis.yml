@@ -17,7 +17,7 @@ jobs:
           #no need to do clone tools
           #before_install: python3 ${BUILD_ROOT_PATH}/install/install.py before_install
           install: sudo apt-get -y install sshpass
-          before_script: ifconfig ens4:0 192.168.1.71 broadcast 192.168.1.1 netmask 255.255.255.0
+          before_script: sudo ifconfig ens4:0 192.168.1.71 broadcast 192.168.1.1 netmask 255.255.255.0
           #script: ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
           script: ifconfig
         - name: "ascenddk test1"
