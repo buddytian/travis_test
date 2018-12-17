@@ -9,9 +9,9 @@ passwd="root"
 
 cd $ScriptPath
 
-#cp ~/hava/ascenddk/ascenddk/common/osd/OsdApi.h .
-#cp ~/hava/ascenddk/ascenddk/common/osd/OsdDataType.h .
-#cp ~/hava/ascenddk/ascenddk/common/utils/ascend_ezdvpp/DvppProcess.h .
+cp ~/hava/ascenddk/ascenddk/common/osd/OsdApi.h .
+cp ~/hava/ascenddk/ascenddk/common/osd/OsdDataType.h .
+cp ~/hava/ascenddk/ascenddk/common/utils/ascend_ezdvpp/DvppProcess.h .
 
 make
 
