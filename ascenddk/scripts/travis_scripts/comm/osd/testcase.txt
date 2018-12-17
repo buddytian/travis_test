@@ -1,0 +1,74 @@
+TestCaseName	Command	drawtype	imgformat	defaultattr	ltx	lty	rbx	rby	rred	rgreen	rblue	thinkness	linetype	Expected Result	Error	Warn
+TestCase_rec_01	osdtest	1	0	ALL	100	100	300	300	255	165	0	1	8	[INFO]DrawRectangle successfully		
+TestCase_rec_02	osdtest	1	0	DEFAULT_COLOR	400	400	600	600				5	8	[INFO]DrawRectangle successfully		
+TestCase_rec_03	osdtest	1	0	DEFAULT_THICK	100	100	300	300	255	0	0		4	[INFO]DrawRectangle successfully		
+TestCase_rec_04	osdtest	1	0	DEFAULT_LINETYPE	100	100	300	300	0	255	0	10		[INFO]DrawRectangle successfully		
+TestCase_rec_05	osdtest	1	1	ALL	100	100	300	300	255	165	0	1	8	[ERROR]DrawRectangle failed	[ERROR]DrawRectangle failed	
+TestCase_rec_06	osdtest	1	0	EMPTY_RECT	100	100	300	300	255	165	0	1	8	[INFO]DrawRectangle successfully		
+TestCase_rec_07	osdtest	1	0	ALL	100	100	300	100	255	0	0	3	8	[INFO]DrawRectangle successfully		
+TestCase_rec_08	osdtest	1	0	ALL	100	100	100	300	255	0	0	3	8	[INFO]DrawRectangle successfully		
+TestCase_rec_09	osdtest	1	0	ALL	300	300	100	100	255	0	0	0	8	[INFO]DrawRectangle successfully		
+TestCase_rec_10	osdtest	1	0	ALL	-50	-50	100	100	255	0	0	3	8	[INFO]DrawRectangle successfully		
+TestCase_rec_11	osdtest	1	0	ALL	1180	620	1480	920	255	0	0	3	8	[INFO]DrawRectangle successfully		
+TestCase_rec_12	osdtest	1	0	ALL	100	100	300	300	255	165	0	-1	8	[INFO]DrawRectangle successfully		
+TestCase_rec_13	osdtest	1	0	ALL	100	100	300	300	255	0	0	3	9	[ERROR]DrawRectangle failed	[ERROR]DrawRectangle failed	
+
+TestCaseName	Command	drawtype	imgformat	defaultattr	title	tx	ty	ftype	fscale	fred	fgreen	fblue	fthick	flinetype	Expected Result	Error	Warn
+TestCase_txt_01	osdtest	2	0	ALL	FACE:98%	100	100	0	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_02	osdtest	2	1	ALL	FACE:98%	100	100	0	1.5	255	0	0	3	8	[ERROR]PutText failed	[ERROR]PutText failed	
+TestCase_txt_03	osdtest	2	0	EMPTY_TEXT	FACE:98%	100	100	0	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_04	osdtest	2	0	EMPTY_TITLE		100	100	0	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_05	osdtest	2	0	ALL	"@#$&^~"	100	100	1	2.5	255	255	0	1	4	[INFO]PutText successfully		
+TestCase_txt_06	osdtest	2	0	ALL	面部90%	100	100	2	1.5	0	255	255	3	4	[INFO]PutText successfully		
+TestCase_txt_07	osdtest	2	0	ALL	FACE:98%	0	0	0	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_08	osdtest	2	0	ALL	FACE:98%	-50	-50	0	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_09	osdtest	2	0	ALL	FACE:98%	5	5	0	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_10	osdtest	2	0	ALL	FACE:98%	1260	50	7	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_11	osdtest	2	0	ALL	FACE:98%	1300	1000	0	1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_12	osdtest	2	0	ALL	FACE:98%	100	100	8	1.5	0	165	0	3	8	[ERROR]PutText failed	[ERROR]PutText failed	
+TestCase_txt_13	osdtest	2	0	DEFAULT_FONT	FACE:98%	100	100		1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_14	osdtest	2	0	ALL	FACE:98%	100	100	3	-1.5	255	0	0	3	8	[INFO]PutText successfully		
+TestCase_txt_15	osdtest	2	0	ALL	FACE:98%	100	100	4	0.0	255	0	0	1	8	[INFO]PutText successfully		
+TestCase_txt_16	osdtest	2	0	DEFAULT_SCALE	FACE:98%	100	100	5		255	0	0	1	8	[INFO]PutText successfully		
+TestCase_txt_17	osdtest	2	0	DEFAULT_COLOR	FACE:98%	100	100	6	1.5				3	8	[INFO]PutText successfully		
+TestCase_txt_18	osdtest	2	0	DEFAULT_THICK	FACE:98%	100	100	0	1.5	255	0	0		8	[INFO]PutText successfully		
+TestCase_txt_19	osdtest	2	0	DEFAULT_LINETYPE	FACE:98%	100	100	0	1.5	255	0	0	3		[INFO]PutText successfully		
+TestCase_txt_20	osdtest	2	0	ALL	FACE:98%	100	100	0	1.5	255	0	0	0	8	[INFO]PutText successfully		
+TestCase_txt_21	osdtest	2	0	ALL	FACE:98%	100	100	0	1.5	255	0	0	-1	8	[ERROR]PutText failed	[ERROR]PutText failed	
+TestCase_txt_22	osdtest	2	0	ALL	FACE:98%	100	100	0	1.5	255	0	0	3	9	[ERROR]PutText failed	[ERROR]PutText failed  
+
+
+
+TestCaseName	Command	drawtype	imgformat	defaultattr	cx	cy	Radius	cred	cgreen	cblue	cthickness	clinetype	Expected Result	Error	Warn
+TestCase_cir_01	osdtest	3	0	ALL	300	300	100	255	0	0	3	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_02	osdtest	3	1	ALL	300	300	100	255	0	0	3	8	[ERROR]DrawCircle failed	[ERROR]DrawCircle failed	
+TestCase_cir_03	osdtest	3	0	ALL	300	300	0	255	0	0	3	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_04	osdtest	3	0	ALL	300	300	-100	255	0	0	3	8	[ERROR]DrawCircle failed	[ERROR]DrawCircle failed	
+TestCase_cir_05	osdtest	3	0	ALL	-200	-200	100	255	0	0	3	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_06	osdtest	3	0	ALL	-50	-50	100	255	165	0	3	4	[INFO]DrawCirclesuccessfully		
+TestCase_cir_07	osdtest	3	0	ALL	2000	2000	100	255	0	0	3	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_08	osdtest	3	0	ALL	1330	770	100	255	0	255	3	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_09	osdtest	3	0	DEFAULT_COLOR	300	300	100				6	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_10	osdtest	3	0	ALL	300	300	100	255	0	0	0	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_11	osdtest	3	0	ALL	300	300	100	255	0	0	-1	8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_12	osdtest	3	0	DEFAULT_THICK	300	300	100	255	0	0		8	[INFO]DrawCirclesuccessfully		
+TestCase_cir_13	osdtest	3	0	DEFAULT_LINETYPE	300	300	100	255	0	0	3		[INFO]DrawCirclesuccessfully		
+TestCase_cir_14	osdtest	3	0	ALL	300	300	100	255	0	0	3	9	[ERROR]DrawCircle failed	[ERROR]DrawCircle failed	
+
+
+
+TestCaseName	Command	drawtype	imgformat	defaultattr	ltx	lty	rbx	rby	rred	rgreen	rblue	thinkness	linetype	title	tx	ty	ftype	fscale	fred	fgreen	fblue	fthick	flinetype	Expected Result	Error	Warn
+TestCase_rectex_01	osdtest	4	0	ALL	100	100	300	300	255	165	0	3	8	FACE:98%	100	100	0	1.5	255	0	0	3	8	[INFO]DrawRectanglelabel successfully		
+TestCase_rectex_02	osdtest	4	1	ALL	100	100	300	300	255	165	0	3	8	FACE:98%	100	100	0	1.5	255	0	0	3	8	[ERROR]DrawRectanglelabel failed	[ERROR]DrawRectanglelabel failed	
+TestCase_rectex_03	osdtest	4	0	EMPTY_RECLAB	100	100	300	300	255	165	0	3	8	FACE:98%	100	100	0	1.5	255	0	0	3	8	[INFO]DrawRectanglelabel successfully		
+TestCase_rectex_04	osdtest	4	0	EMPTY_LAB	100	100	300	300	255	0	0	3	4	FACE:98%	100	100	0	1.5	255	0	0	3	8	[INFO]DrawRectanglelabel successfully		
+TestCase_rectex_05	osdtest	4	0	EMPTY_REC	100	100	300	300	255	0	0	3	8	FACE:98%	100	100	7	1.5	255	0	165	3	4	[INFO]DrawRectanglelabel successfully		
+TestCase_rectex_06	osdtest	4	0	ALL	100	100	300	300	255	165	0	3	9	FACE:98%	100	100	0	1.5	255	0	0	3	8	[ERROR]DrawRectanglelabel failed	[ERROR]DrawRectanglelabel failed	
+TestCase_rectex_07	osdtest	4	0	ALL	100	100	300	300	255	165	0	3	8	FACE:98%	100	100	0	1.5	255	0	0	3	9	[ERROR]DrawRectanglelabel failed	[ERROR]DrawRectanglelabel failed	
+TestCase_rectex_08	osdtest	4	0	ALL	100	100	300	300	255	165	0	3	8	FACE:98%	100	100	8	1.5	255	0	0	3	8	[ERROR]DrawRectanglelabel failed	[ERROR]DrawRectanglelabel failed	
+TestCase_rectex_09	osdtest	4	0	ALL	100	100	300	300	255	165	0	3	8	FACE:98%	100	100	6	1.5	255	0	0	-1	8	[ERROR]DrawRectanglelabel failed	[ERROR]DrawRectanglelabel failed	
+
+
+
+
+
