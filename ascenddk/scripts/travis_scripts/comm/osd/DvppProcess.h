@@ -221,5 +221,5 @@ class DvppProcess {
  private:
     /**
      * @brief Dvpp change from yuv to jpg
-     * @param [in] char *pInputBuf: yuv data buffer
+     * @param [in] char *pInputBuf: yuv data buffer*/
     
