@@ -221,5 +221,72 @@ class DvppProcess {
  private:
     /**
      * @brief Dvpp change from yuv to jpg
-     * @param [in] char *pInputBuf: yuv data buffer*/
+     * @param [in] char *pInputBuf: yuv data buffer
+     *             (dvpp need char *,so pInputBuf do not use const)
+     * @param [in] int inputSize  : size of yuv data buffer
+     * @param [out]sJpegeOut *pOutData :dvpp output buffer and size
+     * @return  enum DvppErrorCode
+     */
+    int DvppYuvChangeToJpeg(char *pInputBuf, int inputSize,
+                            sJpegeOut *pOutData);
+
+    /**
+     * @brief Dvpp deal with yuv to jpg
+     * @param [in] sJpegeIn &inData: yuv data buffer
+     * @param [out]sJpegeOut *pOutData :dvpp output buffer and size
+     * @return  enum DvppErrorCode
+     */
+    int DvppProc(const sJpegeIn &inData, sJpegeOut *pOutData);
+
+    /**
+     * @brief Dvpp change from yuv to h264
+     * @param [in] char *pInputBuf: yuv data buffer
+     *             (dvpp need char *,so pInputBuf do not use const)
+     * @param [in] int inputSize  : size of yuv data buffer
+     * @param [out]shared_ptr<AutoBuffer> *pOutBuf :dvpp output buffer
+     *        and size
+     * @return  enum DvppErrorCode
+     */
+    int DvppYuvChangeToH264(char *pInputBuf, int inputSize,
+                            shared_ptr<AutoBuffer> *pOutBuf);
+
+    /**
+     * @brief convert image from BGR to YUV420SP_NV12
+     * @param [in] pInputBuf:input image data
+     *             (dvpp need char *,so pInputBuf do not use const)
+     * @param [in] inputSize: input image data size
+     * @param [out] pOutBuf: image data after conversion
+     * @return enum DvppErrorCode
+     */
+    int DvppBgrChangeToYuv(char *pInputBuf, int inputSize,
+                           unsigned char *pOutBuf);
+
+    /**
+     * @brief check dvppBgrChangeToYuv function parameter
+     * @param [in] pInputBuf:input image data
+     *             (dvpp need char *,so pInputBuf do not use const)
+     * @param [in] inputSize: input image data size
+     * @param [in] pOutBuf: image data after conversion
+     * @return enum DvppErrorCode
+     */
+    int CheckBgrToYuvParam(char *pInputBuf, int inputSize,
+                           unsigned char *pOutBuf);
+    /**
+     * @brief check whether the image needs alignment
+     * @param [in] width: input image width
+     * @param [in] high: input image high
+     * @return IMAGE_NEED_ALIGN: image need align
+     *         IMAGE_NOT_NEED_ALIGN: image don't need align
+     */
+    int checkImageNeedAlign(int width, int high);
+
+    // used for storage attributes of dvpp class
+    struct DvppPara dvppInstancePara;
+
+    // DVPP instance mode(jpg or h264).
+    int convertMode;
+};
+}
+}
+#endif /* DVPPPROCESS_H_ */
     
