@@ -545,7 +545,15 @@ int main(int argc,char *argv[])
         cv::Mat yuvImg(HEIGHT * 1.5, WIDTH, CV_8UC1),rgbImg;
         memcpy(yuvImg.data,pYuvBuf_dst.get(),framesize);
         cv::cvtColor(yuvImg, rgbImg, CV_YUV420sp2RGB);
-        cv::imwrite("/root/osd/output.jpg", rgbImg);
+        if (atoi(argv[1]) == 1)
+        {cv::imwrite("/root/osd/output_rect.jpg", rgbImg);}
+        else if (atoi(argv[1]) == 2)
+        {cv::imwrite("/root/osd/output_txt.jpg", rgbImg);}
+        else if (atoi(argv[1]) == 3)
+        {cv::imwrite("/root/osd/output_cir.jpg", rgbImg);}
+        else if (atoi(argv[1]) == 4)
+        {cv::imwrite("/root/osd/output_recttxt.jpg", rgbImg);}
+        //cv::imwrite("/root/osd/output.jpg", rgbImg);
     }
 
     fclose(fileIn);

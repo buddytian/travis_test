@@ -19,70 +19,19 @@ def sshclient_execmd(hostname, port, username, password, execmd):
 
 def main():
 
-    hostname = '192.168.4.11'
+    hostname = '192.168.1.2'
     tport = 22
     username = 'root'
     password = 'root'
-    execmd = "/temp/showCamera -c 0"
-
+    execmd = "/root/osd/osdtest 1 0 ALL 100 100 300 300 255 165 0 1 8"
+    sshclient_execmd(hostname, tport, username, password, execmd)
+    execmd = "/root/osd/osdtest 2 0 ALL FACE:98% 100 100 0 1.5 255 0 0 3 8"
+    sshclient_execmd(hostname, tport, username, password, execmd)
+    execmd = "/root/osd/osdtest 3 0 ALL 300 300 100 255 0 0 3 8"
+    sshclient_execmd(hostname, tport, username, password, execmd)
+    execmd = "/root/osd/osdtest 4 0 ALL 100 100 300 300 255 165 0 3 8 FACE:98% 100 100 0 1.5 255 0 0 3 8"
     sshclient_execmd(hostname, tport, username, password, execmd)
 
-def myrectangle(deviceip,deviceport,deviceusrname,devicepasswd,ltx,lty,rbx,rby,red,green,blue,thinkness,linetype):
-    u'''
-    draw rectangle
-    '''
-
-    script="/temp/drawdemo"
-    execmd=script+" "+ltx+" "+lty+" "+rbx+" "+rby+" "+red+" "+green+" "+blue+" "+thinkness+" "+linetype
-    #execmd=script+" "+str(list_rec[0][0][0])+" "+str(list_rec[0][0][1])+" "+str(list_rec[0][1][0])+" "+str(list_rec[0][1][1])+" "+str(list_rec[1][0])+" "+str(list_rec[1][1])+" "+str(list_rec[1][2])+" "+str(list_rec[2])+" "+str(list_rec[3])
-    print execmd
-    mport=int(deviceport)
-    sshclient_execmd(deviceip,mport,deviceusrname,devicepasswd,execmd)
-    
-def mylabel(deviceip,deviceport,deviceusrname,devicepasswd,title,x,y,lfonttype,lfontscale,lred,lgreen,lblue,lthinkness,llinetype):
-    u'''
-    draw label
-    '''
-
-    script="/temp/drawdemo"
-    execmd=script+" "+title+" "+x+" "+y+" "+lfonttype+" "+lfontscale+" "+lred+" "+lgreen+" "+lblue+" "+lthinkness+" "+llinetype
-    #execmd=script+" "+str(list_rec[0][0][0])+" "+str(list_rec[0][0][1])+" "+str(list_rec[0][1][0])+" "+str(list_rec[0][1][1])+" "+str(list_rec[1][0])+" "+str(list_rec[1][1])+" "+str(list_rec[1][2])+" "+str(list_rec[2])+" "+str(list_rec[3])
-    print execmd
-    mport=int(deviceport)
-    sshclient_execmd(deviceip,mport,deviceusrname,devicepasswd,execmd)
-
-def mycircle(deviceip,deviceport,deviceusrname,devicepasswd,cx,cy,Radius,cred,cgreen,cblue,cthinkness,clinetype):
-    u'''
-    draw label
-    '''
-
-    script="/temp/drawdemo"
-    execmd=script+" "+cx+" "+cy+" "+Radius+" "+cred+" "+cgreen+" "+cblue+" "+cthinkness+" "+clinetype
-    #execmd=script+" "+str(list_rec[0][0][0])+" "+str(list_rec[0][0][1])+" "+str(list_rec[0][1][0])+" "+str(list_rec[0][1][1])+" "+str(list_rec[1][0])+" "+str(list_rec[1][1])+" "+str(list_rec[1][2])+" "+str(list_rec[2])+" "+str(list_rec[3])
-    print execmd
-    mport=int(deviceport)
-    sshclient_execmd(deviceip,mport,deviceusrname,devicepasswd,execmd)
-
-def myreclabel(deviceip,deviceport,deviceusrname,devicepasswd,ltx,lty,rbx,rby,red,green,blue,thinkness,linetype,title,x,y,lfonttype,lfontscale,lred,lgreen,lblue,lthinkness,llinetype):
-    u'''
-    draw rectangle
-    '''
-
-    script="/temp/drawdemo"
-    execmd=script+" "+ltx+" "+lty+" "+rbx+" "+rby+" "+red+" "+green+" "+blue+" "+thinkness+" "+linetype+" "+title+" "+x+" "+y+" "+lfonttype+" "+lfontscale+" "+lred+" "+lgreen+" "+lblue+" "+lthinkness+" "+llinetype
-    print execmd
-    mport=int(deviceport)
-    sshclient_execmd(deviceip,mport,deviceusrname,devicepasswd,execmd)     
 
 if __name__=='__main__':
-    #main()
-    #pycrypto-2.6.1.tar.gz--1
-    #paramiko-1.12.1.tar.gz--2
-    if len(sys.argv) == 14:
-        myrectangle(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7],sys.argv[8],sys.argv[9],sys.argv[10],sys.argv[11],sys.argv[12],sys.argv[13])
-    if len(sys.argv) == 15:
-        mylabel(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7],sys.argv[8],sys.argv[9],sys.argv[10],sys.argv[11],sys.argv[12],sys.argv[13],sys.argv[14])
-    if len(sys.argv) == 13:
-        mycircle(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7],sys.argv[8],sys.argv[9],sys.argv[10],sys.argv[11],sys.argv[12])
-    if len(sys.argv) == 24:
-        myreclabel(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7],sys.argv[8],sys.argv[9],sys.argv[10],sys.argv[11],sys.argv[12],sys.argv[13],sys.argv[14],sys.argv[15],sys.argv[16],sys.argv[17],sys.argv[18],sys.argv[19],sys.argv[20],sys.argv[21],sys.argv[22],sys.argv[23])
+    main()
