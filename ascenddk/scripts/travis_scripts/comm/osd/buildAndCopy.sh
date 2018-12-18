@@ -9,9 +9,9 @@ passwd="root"
 
 cd $ScriptPath
 
-cp ~/hava/ascenddk/ascenddk/common/osd/OsdApi.h .
-cp ~/hava/ascenddk/ascenddk/common/osd/OsdDataType.h .
-cp ~/hava/ascenddk/ascenddk/common/utils/ascend_ezdvpp/DvppProcess.h .
+#cp ~/hava/ascenddk/ascenddk/common/osd/OsdApi.h .
+#cp ~/hava/ascenddk/ascenddk/common/osd/OsdDataType.h .
+#cp ~/hava/ascenddk/ascenddk/common/utils/ascend_ezdvpp/DvppProcess.h .
 
 make
 
@@ -23,5 +23,5 @@ if [ ! -f "./out/osdtest" ];then
 fi
 
 sshpass -p $passwd scp ./out/osdtest $userName@$destinationIp:/root/osd/
-cd ../../../data/input/ascendDKOSD/image_source
-sshpass -p $passwd scp ./0000000017.yuv.nv12 $userName@$destinationIp:/root/osd/
+#cd ../../../data/input/ascendDKOSD/image_source
+#sshpass -p $passwd scp ./0000000017.yuv.nv12 $userName@$destinationIp:/root/osd/

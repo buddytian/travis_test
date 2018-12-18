@@ -1,5 +1,5 @@
 TOPDIR      := $(patsubst %,%,$(CURDIR))
-DDK_HOME := /root/mind_studio/tools/che/ddk/ddk
+DDK_HOME := /root/tools/che/ddk/ddk
 CC := aarch64-linux-gnu-g++
 CPP := aarch64-linux-gnu-g++
 #CC := g++
