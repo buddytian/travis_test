@@ -20,4 +20,4 @@ jobs:
           #before_script: sudo chmod +x ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
           ##script: ${TEST_ROOT_PATH}/ascenddk/scripts/travis_scripts/comm/ssh_ubuntu.sh
           #script: sudo sshpass -p Ascend310 ssh -o StrictHostKeyChecking=no administrator@119.3.83.87 'cmd /c D:\travis_test\ssh_test.py'
-          script: sudo sshpass -p root ssh -o StrictHostKeyChecking=no root@218.104.127.194 'python /root/travis_test/ssh_mini.py'
+          script: sudo sshpass -p root ssh -p 2572 -o StrictHostKeyChecking=no root@218.104.127.194 'python /root/travis_test/ascenddk/scripts/travis_scripts/comm/ssh_mini_osd.py'
